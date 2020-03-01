@@ -42,6 +42,18 @@ docker run -e APP_KEY={app_key} -t bigdata1:1.0 python main.py --page_size=2 --n
 
 - num_pages: Number of times to make a API call. This argument is **optional**.
 
+To use my Docker image and run my code on EC2, first you have to login to Docker from EC2 and pull my image.
+
+```
+sudo docker pull henrychon/bigdata1:1.1
+```
+
+Run the following command on EC2 to run the code
+
+```
+sudo docker run -e APP_KEY={app_key} -t henrychon/bigdata1:1.1 python main.py --page_size=2 --num_pages=3
+```
+
 <br />
 
 ## Part 2 - Loading into ElasticSearch
