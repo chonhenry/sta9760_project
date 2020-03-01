@@ -11,7 +11,6 @@ def show_records(app_token: str, num_records: int, num_pages: int):
 
             for r in records:
                 print(r)
-                print("\n")
     else:  # num_pages is not given
         records = get_records(app_token, num_records, 1)
         for r in records:
