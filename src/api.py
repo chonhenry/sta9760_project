@@ -1,8 +1,8 @@
 from sodapy import Socrata
 
 
-def get_records(app_token: str, num_records: int, num_pages=None):
-    app_token = app_token[app_token.find("{") + 1 : -1]
+def get_records(app_token: str, num_records: int, num_pages: int):
+    # app_token = app_token[app_token.find("{") + 1 : -1]
 
     client = Socrata("data.cityofnewyork.us", app_token)
     return client.get(
