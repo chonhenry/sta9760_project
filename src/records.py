@@ -14,9 +14,11 @@ def show_records(app_token: str, num_records: int, num_pages: int):
             records = get_records(app_token, num_records, num_records * i)
             show_record(records)
     else:  # num_pages is not given
+        n = 1
         records = get_records(app_token, num_records, 0)
         show_record(records)
         while len(records) == num_records:
-            records = get_records(app_token, num_records, num_records * i)
+            records = get_records(app_token, num_records, num_records * n)
             show_record(records)
-        show_record(records)
+            n += 1
+

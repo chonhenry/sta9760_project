@@ -38,9 +38,9 @@ docker run -e APP_KEY={app_key} -t bigdata1:1.0 python main.py --page_size=2 --n
 
 - bigdata1: The name of the docker image.
 
-- --page_size: Number of records to request from each API call. This argument is **required**.
+- --page_size: This argument is **required**. Number of records to request from each API call.
 
-- num_pages: Number of times to make a API call. This argument is **optional**.
+- --num_pages: This argument is **optional**. Number of times to make a API call. If this argument is not given, the script will keep requesting data until all the data has been exhausted.
 
 To use my Docker image and run my code on EC2, first you have to login to Docker from EC2 and pull my image.
 
