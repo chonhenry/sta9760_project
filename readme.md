@@ -42,6 +42,8 @@ docker run -e APP_KEY={app_key} -t bigdata1:1.0 python main.py --page_size=2 --n
 
 - --num_pages: This argument is **optional**. Number of times to make a API call. If this argument is not given, the script will keep requesting data until all the data has been exhausted.
 
+- --output: This argument is **optional**. If not given, the script will print the results to stdout. If given, the script will write the data to a file.
+
 To use my Docker image and run my code on EC2, first you have to login to Docker from EC2 and pull my image.
 
 ```
@@ -51,7 +53,7 @@ sudo docker pull henrychon/bigdata1:1.1
 Run the following command on EC2 to run the code
 
 ```
-sudo docker run -e APP_KEY={app_key} -t henrychon/bigdata1:1.1 python main.py --page_size=2 --num_pages=3
+sudo docker run -e APP_KEY={app_key} -t henrychon/bigdata1:1.1 python main.py --page_size=2 --num_pages=3 --output.txt
 ```
 
 <br />
