@@ -1,4 +1,8 @@
 from src.api import get_records
+from datetime import datetime
+from elasticsearch import Elasticsearch
+from requests import get
+from time import sleep
 
 
 def show_record(records):  # print the records to stdout

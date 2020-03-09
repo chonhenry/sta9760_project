@@ -2,6 +2,10 @@ import sys
 import os
 from sodapy import Socrata
 from src.records import manage_records
+from datetime import datetime
+from elasticsearch import Elasticsearch
+from requests import get
+from time import sleep
 
 num_records = int(
     sys.argv[1][sys.argv[1].find("=") + 1 :]
