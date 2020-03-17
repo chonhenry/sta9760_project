@@ -6,8 +6,16 @@ from time import sleep
 
 
 def show_record(records):  # print the records to stdout
+    # for r in records:
+    #     print(r)
     for r in records:
-        print(r)
+        for d in r:
+            print(f"{d}: {r[d]}")
+            if d == "issue_date":
+                issue_date_str = r[d]
+                issue_date_obj = datetime.strptime(issue_date_str, "%m/%d/%Y").date()
+                print(f"{issue_date_obj} {type(issue_date_obj)}")
+        print("\n")
 
 
 def write_to(records, file):  # Write records to a file
@@ -40,4 +48,32 @@ def manage_records(app_token: str, num_records: int, num_pages: int, output_file
             else:
                 show_record(records)
             n += 1
+
+
+def append_records_list(records, records_list):
+    pass
+
+
+def return_records(app_token: str, num_records: int, num_pages: int):
+    return_records_list = []
+
+    if num_pages != 0:  # num_pages is given
+        # records = get_records(app_token, num_records, 0)
+        for i in range(1, num_pages + 1):
+            records = get_records(app_token, num_records, num_records * i)
+            for r in records:
+                return_records_list.append(r)
+            # show_record(records)
+    else:  # num_pages is not givenclear
+        n = 1
+        # records = get_records(app_token, num_records, 0)
+        show_record(records)
+        while len(records) == num_records:
+            records = get_records(app_token, num_records, num_records * n)
+            for r in records:
+                return_records_list.append(r)
+            # show_record(records)
+            n += 1
+
+    return return_records_list
 
