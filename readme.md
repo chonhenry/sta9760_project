@@ -60,7 +60,11 @@ sudo docker run -e APP_KEY={app_key} -t henrychon/bigdata1:1.1 python main.py --
 
 ## Part 2 - Loading into ElasticSearch
 
-Coming Soon
+Run the following command to load the data into ElasticSearch
+
+```
+docker-compose run -e APP_KEY={app_key} pyth_project python main.py --page_size=200 --num_page=10
+```
 
 <br />
 

@@ -34,12 +34,6 @@ if __name__ == "__main__":
             elif "output" in arg:
                 output_file = arg[arg.find("=") + 1 :]
 
-    if 1 == 0:
-        pass
-        # manage_records(
-        #     dict(os.environ)["APP_KEY"], num_records, num_pages, output_file
-        # )  # show the records
-
     records = return_records(
         dict(os.environ)["APP_KEY"], num_records, num_pages
     )  # records is a list, each item in records is a dictionary
@@ -50,7 +44,10 @@ if __name__ == "__main__":
         rec["issue_date_datetime"] = datetime.strptime(
             rec["issue_date"], "%m/%d/%Y"
         ).date()
-        res = es.index(index="parking-violations", doc_type="record", body=rec,)
 
-    print(len(records))
+        try:
+            rec["fine_amount_number"] = float(rec["fine_amount"])
+        except:
+            pass
+        res = es.index(index="parking-violations", doc_type="record", body=rec,)
 
