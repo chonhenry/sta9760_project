@@ -6,16 +6,8 @@ from time import sleep
 
 
 def show_record(records):  # print the records to stdout
-    # for r in records:
-    #     print(r)
     for r in records:
-        for d in r:
-            print(f"{d}: {r[d]}")
-            if d == "issue_date":
-                issue_date_str = r[d]
-                issue_date_obj = datetime.strptime(issue_date_str, "%m/%d/%Y").date()
-                print(f"{issue_date_obj} {type(issue_date_obj)}")
-        print("\n")
+        print(r)
 
 
 def write_to(records, file):  # Write records to a file

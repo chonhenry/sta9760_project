@@ -39,7 +39,10 @@ if __name__ == "__main__":
 
     i = 0
 
-    while True:
+    docks = get_bike_data()
+    print(len(docks))
+
+    while False:
         i += 1
 
         docks = get_bike_data()
