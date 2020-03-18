@@ -68,6 +68,16 @@ docker-compose run -e APP_KEY={app_key} pyth_project python main.py --page_size=
 
 <br />
 
-## Part 3 - Visualizing and ANalysis on Kibana
+## Part 3 - Visualizing and Analysis on Kibana
 
-Coming Soon
+1.
+<img src="visualization/pie_chart(fine_amount).png" width="800" height="auto">
+
+2.
+<img src="visualization/histigram(county).png" width="800" height="auto">
+
+3.
+<img src="visualization/line(datetime).png" width="800" height="auto">
+
+4.
+<img src="visualization/line(violation).png" width="800" height="auto">
