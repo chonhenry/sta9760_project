@@ -70,14 +70,27 @@ docker-compose run -e APP_KEY={app_key} pyth_project python main.py --page_size=
 
 ## Part 3 - Visualizing and Analysis on Kibana
 
-1.
-<img src="visualization/pie_chart(fine_amount).png" width="800" height="auto">
+#### 1. Top 10 county of number of violations
 
-2.
-<img src="visualization/histigram(county).png" width="800" height="auto">
+   <img src="visualization/pie_chart(fine_amount).png" width="1000" height="auto">
+   This graph shows the propotions of the fine amount and the different type of violations. <br>
+   From this graph, we can see that the top range of fine amount is $50 to $100. 43.54% of tickets are in this range. 29.23% and 26.92% of tickets is in the range of $100 to $150 and $0 to $50. respectively. Only 0.3% of the tickets has fine amount more that $150.
 
-3.
-<img src="visualization/line(datetime).png" width="800" height="auto">
+#### 2. Top 10 County of Number of Violations
 
-4.
-<img src="visualization/line(violation).png" width="800" height="auto">
+   <img src="visualization/histigram(county).png" width="1000" height="auto">
+   This graph shows the top 10 county that has the highest number of tickets in the past 5 years. <br>
+   From this graph, we can see that the county that has the highest number of tickets is NY, which the number of tickets is 997. This is almost twice as many as the number of tickets of the second county, Q, which has 578 tickets from the past 5 years.
+
+#### 3. Monthly Number of Violations
+
+   <img src="visualization/line(datetime).png" width="1000" height="auto">
+   This graph shows the number of tickets in each month for the past 5 years. <br>
+   If we look at the beginning of the data, we could see that there are only few case in each month in 2015. For example, in June 2015, there were only 6 tickets. These numbers are totally unrealistic. This could be due to the fact that there are some missing data in the dataset. <br>
+   Also, we could see there are lots of fluctuation between months. For example, August 2017 has  469 tickets. But in the next month September 2017, the number of tickets drops to 191, which is less than half of the previous month.
+
+#### 4. Top 10 Violations with Corresponding Average Fine Amount
+
+   <img src="visualization/line(violation).png" width="1000" height="auto">
+   This graph shows the top 10 ticket violatoins with the corresponding average fine amount. <br>
+   We see that "photo school zone speed violation" is the top violation, which has 396 tickets issued. The average fine amount of this violation is $50, which however is lower than couple of other violations in the top 10 group. The violation from the top 10 that has the highest average fine amount are "fire hydrant" and "double parking". The average fine of these two violations is $115.
