@@ -70,13 +70,13 @@ docker-compose run -e APP_KEY={app_key} pyth_project python main.py --page_size=
 
 ## Part 3 - Visualizing and Analysis on Kibana
 
-#### 1. Top 10 county of number of violations
+#### 1. Proportion of Different Range of Fine Amount and Types of Violation
 
    <img src="visualization/pie_chart(fine_amount).png" width="1000" height="auto">
    This graph shows the propotions of the fine amount and the different type of violations. <br>
    From this graph, we can see that the top range of fine amount is $50 to $100. 43.54% of tickets are in this range. 29.23% and 26.92% of tickets is in the range of $100 to $150 and $0 to $50. respectively. Only 0.3% of the tickets has fine amount more that $150.
 
-#### 2. Top 10 County of Number of Violations
+#### 2. Top 10 Counties with the Highest Number of Tickets
 
    <img src="visualization/histigram(county).png" width="1000" height="auto">
    This graph shows the top 10 county that has the highest number of tickets in the past 5 years. <br>
